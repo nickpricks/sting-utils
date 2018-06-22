@@ -1,0 +1,27 @@
+{
+  "name": "sting-utils",
+  "version": "0.0.1",
+  "description": "STRING (or in some cases INTEGER/FLOATS) based Utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.test.js",
+    "prepublish": "npm test"
+  },
+  "author": "Nick Walter",
+  "license": "MIT",
+  "keywords": [
+    "string-utils"
+  ],
+  "dependencies": {
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickpricks/sting-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nickpricks/sting-utils/issues"
+  },
+  "homepage": "https://github.com/nickpricks/sting-utils#readme"
+}
