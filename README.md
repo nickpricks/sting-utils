@@ -1,20 +1,30 @@
-# sting-utils
+# string-common-utils
 
-STRING (or in some cases INTEGER/FLOATS) based Utilities
+STRING based Utilities
+
+# tl;dr 
+```
+npm i string-common-utils
+```
 
 # Current Features
 
-* parseEmptySting
-* formatAsCurrency
 * capitalizeFirstLetter
-* capitalizeWord
 * capitalizeFirstLetterInWholeSentence
-* getFileExtension = fn => fn.substring(fn.lastIndexOf('.'), fn.length);
-* uuid - dependent on *uuid*
-* parseIntOrZero
+* capitalizeWord
+* formatAsCurrency
+* getFileExtension
+* inWords
+* parseEmptySting
 * parseFloatOrZero
 * parseFloatToFixed
+* parseIntOrZero
 * prefixZero
-* inWords
+* uuid - dependent on npm package *uuid*
 
-More Detailed Read Me coming soon !!!
+# Tests
+```
+npm tests
+```
+
+More features & examples coming soon !!!
