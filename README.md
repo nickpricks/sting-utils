@@ -24,7 +24,7 @@ npm i string-common-utils
 
 # Tests
 ```
-npm tests
+npm test
 ```
 
 More features & examples coming soon !!!
