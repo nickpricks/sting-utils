@@ -1,6 +1,6 @@
 {
   "name": "string-common-utils",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "STRING (or in some cases INTEGER/FLOATS) based Utilities",
   "main": "index.js",
   "scripts": {
