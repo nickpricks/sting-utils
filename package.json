@@ -9,14 +9,18 @@
     "prepublish": "npm test"
   },
   "author": {
-		"name": "Nick Walter",
-		"email": "niteshk@simsaw.com"
+    "name": "Nick Walter",
+    "email": "niteshk@simsaw.com"
   },
   "engines": {
-		"node": ">=6"
-	},
+    "node": ">=6"
+  },
   "license": "MIT",
   "keywords": [
+    "common-string-helpers",
+    "common-string-utils",
+    "string-common-functions",
+    "string-helpers",
     "string-utils"
   ],
   "dependencies": {
