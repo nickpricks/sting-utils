@@ -3,6 +3,8 @@
 node_modules/
 .vscode/
 
+index.build.js
+
 npm-debug.log
 yarn.lock.log
 yarn-error.log
