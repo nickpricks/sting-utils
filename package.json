@@ -5,23 +5,27 @@
   "main": "index.js",
   "scripts": {
     "test": "node index.test.js",
+    "tests": "npm test",
     "prepublish": "npm test"
   },
-  "author": "Nick Walter",
+  "author": {
+    "name": "Nick Walter",
+    "email": "niteshk@simsaw.com"
+  },
+  "engines": {
+    "node": ">=6"
+  },
   "license": "MIT",
   "keywords": [
+    "common-string-helpers",
+    "common-string-utils",
+    "string-common-functions",
+    "string-helpers",
     "string-utils"
   ],
   "dependencies": {
     "uuid": "^3.2.1"
   },
   "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nickpricks/sting-utils.git"
-  },
-  "bugs": {
-    "url": "https://github.com/nickpricks/sting-utils/issues"
-  },
-  "homepage": "https://github.com/nickpricks/sting-utils#readme"
+  "repository": "nickpricks/sting-utils.git"
 }
