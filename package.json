@@ -1,10 +1,10 @@
 {
   "name": "string-common-utils",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "STRING (or in some cases INTEGER/FLOATS) based Utilities",
   "main": "index.js",
   "scripts": {
-    "test": "node index.test.js",
+    "test": "jest --colors",
     "tests": "npm test",
     "prepublish": "npm test"
   },
@@ -23,9 +23,12 @@
     "string-helpers",
     "string-utils"
   ],
-  "dependencies": {
-    "uuid": "^3.2.1"
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.4"
   },
-  "devDependencies": {},
   "repository": "nickpricks/sting-utils.git"
 }
