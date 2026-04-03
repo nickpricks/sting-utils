@@ -1,0 +1,64 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'package.json'   # only run when package.json changes
+  workflow_dispatch:     # allow manual trigger from GitHub UI
+
+concurrency:
+  group: publish
+  cancel-in-progress: true
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to push git tags
+      id-token: write   # needed for npm provenance
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      # Guard: skip publish if this version tag already exists on origin
+      - name: Check if version is already tagged
+        id: version_check
+        run: |
+          VERSION="v$(node -p "require('./package.json').version")"
+          if git ls-remote --tags origin "$VERSION" | grep -q "$VERSION"; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish to npm
+        if: steps.version_check.outputs.exists == 'false'
+        run: npm publish --provenance --access public
+        # NODE_AUTH_TOKEN is set automatically by setup-node via OIDC (Trusted Publishing)
+
+      - name: Tag release
+        if: steps.version_check.outputs.exists == 'false'
+        run: |
+          VERSION="v$(node -p "require('./package.json').version")"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag "$VERSION"
+          git push origin "$VERSION"
