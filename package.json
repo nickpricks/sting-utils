@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node index.test.js",
     "tests": "npm test",
-    "prepublish": "npm test"
+    "prepublish": "npm test",
+    "bench": "node bench.js"
   },
   "author": {
     "name": "Nick Walter",
