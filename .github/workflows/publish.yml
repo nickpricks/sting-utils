@@ -3,7 +3,7 @@ name: Publish to npm
 on:
   push:
     branches:
-      - master
+      - main  # TODO: change to 'master' after first manual publish
     paths:
       - 'package.json'   # only run when package.json changes
   workflow_dispatch:     # allow manual trigger from GitHub UI
